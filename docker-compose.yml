@@ -23,7 +23,7 @@ services:
       - 8000:8000
     restart: always
     depends_on:
-      - cloud
+      - mysql_db
       
 volumes:
   mysql_db:
