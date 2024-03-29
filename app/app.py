@@ -1,5 +1,5 @@
-from flask import Flask, render_template, request, send_from_directory, flash
-from sqlalchemy import MetaData, func
+from flask import Flask, render_template
+from sqlalchemy import MetaData
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from math import ceil
