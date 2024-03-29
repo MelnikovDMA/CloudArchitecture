@@ -9,7 +9,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=cloud
       - MYSQL_DATABASE=cloud
-    restart: unless-stopped
+    restart: always
     volumes:
       - ./db_dump:/docker-entrypoint-initdb.d
       - mysql_db:/var/lib/mysql
