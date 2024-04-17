@@ -3,7 +3,7 @@ import os
 SECRET_KEY = 'kdnndkkw'
 
 SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:cloud@mysql_db:3306/cloud'
-# SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://std_2033_cloud:Artem2558@std-mysql.ist.mospolytech.ru/std_2033_cloud'
+#SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://std_2033_cloud:123456789@std-mysql.ist.mospolytech.ru/std_2033_cloud'
 
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 SQLALCHEMY_ECHO = True

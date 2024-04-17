@@ -30,8 +30,6 @@ def login():
                 remember_me = True
             else:
                 remember_me = False
-            print(remember_me)
-            print('--------------')
             if login and password:
                 user = db.session.execute(db.select(User).filter_by(login=login)).scalar()
                 if user and user.check_password(password):
@@ -47,18 +45,20 @@ def login():
     #     flash('Ошибка при загрузке', 'danger')
     #     return redirect(url_for('index'))
 
-@bp.route('/register', methods=['POST'])
+@bp.route('/register', methods=['POST', 'GET'])
 def register():
     # try:
         if request.method == 'POST':
-            login = request.form.get('login')
-            password = request.form.get('password')
+            login_form = request.form.get('login')
+            password_form = request.form.get('password')
            
-            if login and password:
-                user = db.session.execute(db.select(User).filter_by(login=login)).scalar()
+            if login_form and password_form:
+                user = db.session.execute(db.select(User).filter_by(login=login_form)).scalar()
                 if not user:
-                    user = User(login=login, first_name=login, last_name=login)
-                    user.set_password(password)
+                    print('---------------------')
+                    user = User(login=login_form, first_name=login_form, last_name=login_form)
+                    print(user.login)
+                    user.set_password(password_form)
                     db.session.add(user)
                     db.session.commit()
 
@@ -69,6 +69,9 @@ def register():
                 flash('Логин занят', 'warning')
                 return redirect(url_for('auth.login'))
             return redirect(url_for('index'))
+        if request.method == 'GET':
+            return render_template('auth/register.html')
+             
 
 @bp.route('/logout')
 @login_required
