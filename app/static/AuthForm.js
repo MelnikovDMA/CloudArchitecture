@@ -4,9 +4,11 @@ window.onload = function() {
     const form = document.getElementById('form');
 }
 
-loginBtn.onclick = (event) => {
-    form.action = event.target.dataset.endpoint;
-    console.log(form.action);
+if (loginBtn) {
+    loginBtn.onclick = (event) => {
+        form.action = event.target.dataset.endpoint;
+        console.log(form.action);
+    }
 }
 
 registerBtn.onclick = (event) => {
