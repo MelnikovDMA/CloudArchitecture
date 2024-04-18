@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS `cloud` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `cloud`;
+CREATE DATABASE IF NOT EXISTS `melnikov` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `melnikov`;
 
 
 CREATE TABLE `alembic_version` (
@@ -42,5 +42,3 @@ ALTER TABLE `users`
 
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
-
