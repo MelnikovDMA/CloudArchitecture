@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 
-    <title>Облака</title>
+    <title>АОПиС</title>
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -19,21 +19,21 @@
             <div class="container-fluid">
                 <div class="logo navbar-brand">
                     <a href="{{ url_for('index') }}" class="text-light text-decoration-none">
-                        Облака
+                        АОПиС
                     </a>
                 </div>
-               
+
                 {% if current_user.is_authenticated %}
                 <span class="text-light">{{ current_user.full_name }}</span>
                 <a class="btn btn-outline-light" href="{{ url_for('auth.logout') }}">Выйти</a>
                 {% else %}
                     <a class="btn btn-outline-light" href="{{ url_for('auth.login') }}">Войти</a>
                 {% endif %}
-              
+
             </div>
         </nav>
     </header>
-        
+
     <div class="alerts-area">
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% for category, msg in messages %}
@@ -55,7 +55,7 @@
         crossorigin="anonymous"></script>
 
     <script src="{{ url_for('static', filename='delete_modal_data.js')}}"></script>
-    
+
 </body>
 
 </html>

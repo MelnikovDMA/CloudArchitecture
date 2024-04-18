@@ -7,8 +7,8 @@ services:
     ports:
       - "32001:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=cloud
-      - MYSQL_DATABASE=cloud
+      - MYSQL_ROOT_PASSWORD=melnikov
+      - MYSQL_DATABASE=melnikov
     restart: always
     volumes:
       - ./db_dump:/docker-entrypoint-initdb.d
@@ -16,7 +16,7 @@ services:
   app:
     container_name: app
     hostname: app
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile.service
     ports:
@@ -24,6 +24,6 @@ services:
     restart: always
     depends_on:
       - mysql_db
-      
+
 volumes:
   mysql_db:
